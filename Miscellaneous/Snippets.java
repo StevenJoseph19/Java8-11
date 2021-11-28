@@ -12,6 +12,12 @@ public class Snippets {
 		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		int toc = list.stream().reduce(0, Integer::sum);
+
+
+		   int[][] arrays = cities.stream() // Stream<List<Integer>>
+                .map(list -> list.stream().mapToInt(i -> i).toArray()) // Stream<int[]>
+                .toArray(int[][]::new);
+
 	}
 
 }
